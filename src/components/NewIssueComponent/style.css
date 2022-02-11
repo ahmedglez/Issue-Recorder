@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf");
+}
+
+.newIssue-container {
+  width: 80%;
+  height: fit-content;
+  font-family: "Roboto";
+  margin: 0 auto;
+  background-color: rgba(250, 235, 215, 0.534);
+  border-radius: 60px;
+  padding: 50px;
+}
+
+.newIssue-container h2 {
+  font-size: 45px;
+  margin-top: -10px;
+}
+
+.newIssue-form {
+  width: auto;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.newIssue-form .input-container {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  font-size: 35px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+}
+
+.newIssue-form .input-container input {
+  border-radius: 50px;
+  width: 90%;
+  height: 45px;
+  background-color: rgba(251, 251, 251, 0.89);
+  border: none;
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Roboto";
+}
+
+.newIssue-form .input-container select {
+  border-radius: 50px;
+  width: 80%;
+  height: 45px;
+  background-color: rgba(251, 251, 251, 0.89);
+  border: none;
+  font-size: 30px;
+  padding-left: 30px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.808);
+  background-image: url("/src/assets/icons/down-filled-triangular-arrow.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+#submit-button {
+  border-radius: 15px;
+  background-color: #5ca1e1;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  font-family: "Roboto";
+  font-weight: bold;
+  padding: 16px;
+  width: 220px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 30px;
+  margin-top: 15px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+}
+
+#submit-button {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  font-size: 46px;
+}
+
+#submit-button:after {
+  content: "+";
+  position: absolute;
+  opacity: 0;
+  top: 14px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#submit-button:hover {
+  padding-right: 24px;
+  padding-left: 8px;
+}
+
+#submit-button:hover:after {
+  opacity: 1;
+  right: 10px;
+}

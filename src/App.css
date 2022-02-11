@@ -1,6 +1,13 @@
 .App {
   text-align: center;
 }
+body {
+  background-color: #bea998;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
 
 .App-logo {
   height: 40vmin;

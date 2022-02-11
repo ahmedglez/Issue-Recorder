@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf");
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -20px;
+}
+.header h1 {
+  font-size: 70px;
+  font-family: "Roboto";
+}
+.header .sub-title {
+  color: rgba(0, 0, 0, 0.746);
+  font-size: 50px;
+  font-weight: 120px;
+  margin-left: 30px;
+}
+.header .sub-title .link {
+  font-size: 50px;
+  color: rgba(0, 0, 0, 0.746);
+  text-decoration: none;
+  transition-duration: 200ms;
+}
+
+.header .sub-title .link:hover {
+  font-weight: bold;
+  color: rgb(139, 229, 251);
+  font-size: 51px;
+}
