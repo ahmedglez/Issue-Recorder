@@ -1,14 +1,15 @@
 import React from "react";
 import "./style.css";
-import AiOutlineDown from "react-icons/ai";
 
 function NewIssueComponent(props) {
+  const addIssue = (issue) => {};
+
   return (
     <div className="newIssue-container">
       <h2>Add New Issue:</h2>
       <form className="newIssue-form" action="">
         <div className="input-container">
-          <label for="input--description">Description</label>
+          <label htmlFor="input--description">Description</label>
           <input
             type="text"
             id="input--description"
@@ -17,7 +18,7 @@ function NewIssueComponent(props) {
         </div>
 
         <div className="input-container">
-          <label for="input--severity">Severity</label>
+          <label htmlFor="input--severity">Severity</label>
           <select id="input--severity" name="input--severity">
             <option value="Low">Low</option>
             <option value="Medium">Medium</option>
@@ -26,16 +27,16 @@ function NewIssueComponent(props) {
         </div>
 
         <div className="input-container">
-          <label for="input--type">Type</label>
+          <label htmlFor="input--type">Type</label>
           <input id="input--type" type="text" placeholder="E.g: SyntaxError" />
         </div>
 
         <div className="input-container">
-          <label for="input--responsable">Assigned to</label>
+          <label htmlFor="input--responsable">Assigned to</label>
           <input id="input--responsable" type="text" placeholder="John Boe" />
         </div>
 
-        <button id="submit-button" type="submit">
+        <button id="submit-button" type="submit" onClick={addIssue}>
           Add
         </button>
       </form>
