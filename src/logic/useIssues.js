@@ -2,57 +2,35 @@ import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
 import { Issue } from "./IssueClass";
 
-function useTodos() {
-  const {
-    item: issues,
-    saveItem: saveIssue,
-    sincronize: sincronizedIssue,
-    loading,
-    error,
-  } = useLocalStorage("ISSUES_V1", []);
-
-  const [searchIssue, setSearchIssue] = React.useState("");
-  const totalIssues = issues.length;
-
-  let searchedIssues = [];
-
-  if (!searchedIssues.length === 0) {
-    searchedIssues = issues;
-  } else {
-    searchedIssues = issues.filter((issue) => {
-      const issueText = issue.text.toLowerCase();
-      const searchText = searchIssue.toLowerCase();
-      return issueText.includes(searchText);
-    });
-  }
+function useIssues() {
+  let issues = [];
+  issues = localStorage.getItem("Issues");
 
   const addIssue = (issue) => {
-    const newIssues = [...issues];
-    const myissue = new Issue(
-      issue.description,
-      issue.severity,
-      issue.type,
-      issue.assigned,
-      issue.id
-    );
-    newIssues.push(myissue);
-    saveIssue(newIssues);
+    issues.push(issue);
+    localStorage.setItem("Issues", issues);
   };
 
-  const deleteIssue = (id) => {
-    const issueIndex = issues.findIndex((iss) => iss.id === id);
-    const newIssues = [...issues];
-    newIssues.splice(issueIndex, 1);
-    saveIssue(newIssues);
+  const removeIssue = (id) => {
+    let a = true;
+    for (let i = 0; i < issues.length && a === true; i++) {
+      if (issues[i].id == id) {
+        issues.splice(i, 1);
+        localStorage.setItem("Issues", issues);
+        a = false;
+      }
+    }
   };
 
-  return (
-    loading,
-    error,
-    searchIssue,
-    searchedIssues,
-    totalIssues,
-    addIssue,
-    deleteIssue
-  );
+  const getIssuebyID = (id) => {
+    let a = true;
+    for (let i = 0; i < issues.length && a === true; i++) {
+      if (issues[i].id == id) {
+        return issues[i];
+        a = false;
+      }
+    }
+  };
 }
+
+export { useIssues };
