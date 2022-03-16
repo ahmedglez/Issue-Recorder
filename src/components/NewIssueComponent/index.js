@@ -17,8 +17,7 @@ function NewIssueComponent(props) {
 
   var issues = JSON.parse(localStorage.getItem("Issues"));
   var ids = JSON.parse(localStorage.getItem("Ids"));
-  console.log(issues);
-  console.log(ids);
+
   let generateId = generateUUID();
 
   while (ids.includes(generateId)) {
@@ -53,8 +52,6 @@ function NewIssueComponent(props) {
     }
 
     localStorage.setItem("Issues", JSON.stringify(issues));
-    console.log(issues);
-    console.log(ids);
   };
 
   return (
@@ -66,7 +63,7 @@ function NewIssueComponent(props) {
           <input
             type="text"
             id="input--id"
-            disabled="true"
+            disabled={true}
             value={generateId}
           />
         </div>

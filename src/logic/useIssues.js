@@ -1,10 +1,8 @@
 import React from "react";
-import { useLocalStorage } from "./useLocalStorage";
-import { Issue } from "./IssueClass";
 
 function useIssues() {
-  let issues = [];
-  issues = localStorage.getItem("Issues");
+  var myissues = JSON.parse(localStorage.getItem("Issues"));
+  const [issues, setIssues] = React.useState(myissues);
 
   const addIssue = (issue) => {
     issues.push(issue);
@@ -31,6 +29,8 @@ function useIssues() {
       }
     }
   };
+
+  return { addIssue, removeIssue, getIssuebyID };
 }
 
 export { useIssues };

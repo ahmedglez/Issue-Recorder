@@ -6,12 +6,12 @@ function Header() {
     <div className="header">
       <h1 className="title">
         JS Issue Record
-        <a className="sub-title">
+        <p className="sub-title">
           by{" "}
           <a className="link" href="https://github.com/ahmedglez">
             ahmedglez
           </a>
-        </a>
+        </p>
       </h1>
     </div>
   );
