@@ -5,8 +5,8 @@ import { IssueContainer } from "../IssueContainer";
 function IssuesList(props) {
   return (
     <div className="issue-container">
-      {props.list.map((issue) => {
-        <IssueContainer />;
+      {props.Issues.map((issue) => {
+        <IssueContainer issue={issue} />;
       })}
     </div>
   );

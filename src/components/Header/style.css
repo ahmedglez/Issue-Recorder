@@ -18,6 +18,7 @@
   font-size: 50px;
   font-weight: 120px;
   margin-left: 30px;
+  margin-top: 20px;
 }
 .header .sub-title .link {
   font-size: 50px;
@@ -28,6 +29,6 @@
 
 .header .sub-title .link:hover {
   font-weight: bold;
-  color: rgb(139, 229, 251);
+  color: #6b9fcf;
   font-size: 51px;
 }

@@ -11,6 +11,8 @@
   background-color: rgba(250, 235, 215, 0.534);
   border-radius: 60px;
   padding: 50px;
+  margin-top: -70px;
+  padding-bottom: 2px;
 }
 
 .newIssue-container h2 {
@@ -113,4 +115,93 @@
 #submit-button:hover:after {
   opacity: 1;
   right: 10px;
+}
+
+#showList-button-container {
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+#showList-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  width: fit-content;
+  height: 55px;
+  max-height: 85px;
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 20px;
+  background-color: transparent;
+  border: none;
+}
+
+#t-button {
+  margin-top: -12px;
+  padding-top: 10px;
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
+}
+
+#t-button-container {
+  margin: 0 2rem;
+}
+
+/* Underline styles */
+#t-button {
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
+  cursor: pointer;
+}
+
+/* Fade in */
+#t-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: black;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+#t-button:hover::after,
+#t-button:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+/* Slide in */
+#t-button-container:nth-child(2) #t-button {
+  overflow: hidden;
+}
+
+#t-button-container:nth-child(2) #t-button::after {
+  opacity: 1;
+  transform: translate3d(-100%, 0, 0);
+}
+
+#t-button-container:nth-child(2) #t-button:hover::after,
+#t-button-container:nth-child(2) #t-button:focus::after {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Scale from center */
+#t-button-container:nth-child(3) #t-button::after {
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+#t-button-container:nth-child(3) #t-button:hover::after,
+#t-button-container:nth-child(3) #t-button:focus::after {
+  transform: scale(1);
 }

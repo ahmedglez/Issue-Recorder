@@ -99,7 +99,17 @@ function NewIssueComponent(props) {
           Add
         </button>
       </form>
-      <div id="showMore-button"></div>
+      <div id="showList-button-container">
+        <button
+          id="showList-button"
+          type="button"
+          onClick={props.SetShowList(!props.showList)}
+        >
+          <div id="t-button-container">
+            <p id="t-button">Show List</p>
+          </div>
+        </button>
+      </div>
       <script src="./logic.js"></script>
     </div>
   );

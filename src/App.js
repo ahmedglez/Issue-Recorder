@@ -41,7 +41,7 @@ function App() {
         }}
       >
         <Header />
-        <NewIssueComponent />
+        <NewIssueComponent showList={showList} SetShowList={SetShowList} />
       </IssueContext.Provider>
     </div>
   );
