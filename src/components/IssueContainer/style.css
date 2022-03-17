@@ -1,0 +1,40 @@
+.issue-container {
+  display: flex;
+  flex-direction: column;
+  color: rgba(39, 38, 38, 0.952);
+  border-radius: 35px;
+  margin-bottom: 35px;
+  max-width: 650px;
+  height: fit-content;
+}
+
+.issue-container h2 {
+  margin-bottom: 5px;
+}
+
+#issue-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  font-size: 1.2em;
+  font-weight: bolder;
+  margin: 0 auto;
+  color: rgba(39, 38, 38, 0.952);
+  margin-top: 15px;
+  margin-left: -6px;
+  text-decoration: underline;
+  transition-duration: 250ms;
+}
+
+#issue-button:hover {
+  color: black;
+}
+
+.Modal-container {
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  display: block;
+  z-index: 500;
+}

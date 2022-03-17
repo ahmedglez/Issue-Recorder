@@ -3,10 +3,10 @@
 import React from "react";
 import "./App.css";
 import { Header } from "./components/Header";
-import { useLocalStorage } from "./logic/useLocalStorage";
 import { NewIssueComponent } from "./components/NewIssueComponent";
 import { IssueContext } from "./logic/IssueContext";
-import { useIssues } from "./logic/useIssues";
+import { IssuesList } from "./components/IssuesList";
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js"></script>;
 
 function App() {
@@ -41,7 +41,13 @@ function App() {
         }}
       >
         <Header />
-        <NewIssueComponent showList={showList} SetShowList={SetShowList} />
+        <NewIssueComponent
+          showList={showList}
+          SetShowList={SetShowList}
+          issues={Issues}
+          ids={Ids}
+        />
+        {showList === true && <IssuesList issues={Issues} />}
       </IssueContext.Provider>
     </div>
   );

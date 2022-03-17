@@ -121,6 +121,7 @@
   width: fit-content;
   height: fit-content;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 #showList-button {
@@ -138,6 +139,7 @@
   border-radius: 20px;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 #t-button {
@@ -146,62 +148,67 @@
   display: block;
   position: relative;
   padding: 0.2em 0;
+  text-decoration-thickness: 13%;
 }
 
 #t-button-container {
   margin: 0 2rem;
+  cursor: pointer;
 }
 
 /* Underline styles */
 #t-button {
   display: block;
   position: relative;
-  padding: 0.2em 0;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.616);
+  transition-duration: 250ms;
+}
+
+#t-button::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  bottom: 100;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.616);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
-/* Fade in */
-#t-button::after {
+#t-button:hover::before {
+  transform: scaleX(1);
+  cursor: pointer;
+}
+
+/* Underline styles */
+#tc-button {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.616);
+  transition-duration: 250ms;
+  margin-top: 5px;
+}
+
+#tc-button::before {
   content: "";
   position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 0.1em;
-  background-color: black;
-  opacity: 0;
-  transition: opacity 300ms, transform 300ms;
+  background-color: rgba(0, 0, 0, 0.616);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
-#t-button:hover::after,
-#t-button:focus::after {
-  opacity: 1;
-  transform: translate3d(0, 0.2em, 0);
-}
-
-/* Slide in */
-#t-button-container:nth-child(2) #t-button {
-  overflow: hidden;
-}
-
-#t-button-container:nth-child(2) #t-button::after {
-  opacity: 1;
-  transform: translate3d(-100%, 0, 0);
-}
-
-#t-button-container:nth-child(2) #t-button:hover::after,
-#t-button-container:nth-child(2) #t-button:focus::after {
-  transform: translate3d(0, 0, 0);
-}
-
-/* Scale from center */
-#t-button-container:nth-child(3) #t-button::after {
-  opacity: 1;
-  transform: scale(0);
-  transform-origin: center;
-}
-
-#t-button-container:nth-child(3) #t-button:hover::after,
-#t-button-container:nth-child(3) #t-button:focus::after {
-  transform: scale(1);
+#tc-button:hover::before {
+  transform: scaleX(1);
+  cursor: pointer;
 }

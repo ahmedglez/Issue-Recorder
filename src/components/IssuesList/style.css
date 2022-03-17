@@ -1,0 +1,30 @@
+.list-container {
+  width: 90%;
+  height: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(250, 235, 215, 0.075);
+  margin-top: 20px;
+  border-radius: 50px;
+}
+
+.list-container .list-container-title {
+  font-family: "Roboto";
+  font-size: 1.9em;
+}
+
+.issues-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 160px;
+  padding-right: 160px;
+}
+
+.issues-container .issue-container {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  font-size: 0.8em;
+}

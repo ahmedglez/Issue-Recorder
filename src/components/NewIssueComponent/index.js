@@ -15,14 +15,28 @@ function NewIssueComponent(props) {
     return uuid;
   }
 
-  var issues = JSON.parse(localStorage.getItem("Issues"));
-  var ids = JSON.parse(localStorage.getItem("Ids"));
+  var issues = props.issues;
+  var ids = props.ids;
 
   let generateId = generateUUID();
 
   while (ids.includes(generateId)) {
     generateId = generateUUID();
   }
+  var showMessage = "";
+  if (props.showList === false) {
+    showMessage = "Show List";
+  } else {
+    showMessage = "Hide List";
+  }
+  const onShowList = () => {
+    props.SetShowList(!props.showList);
+    window.scroll({
+      top: 100,
+      left: 100,
+      behavior: "smooth",
+    });
+  };
 
   const addIssue = () => {
     const mybutton = document.getElementById("submit-button");
@@ -31,22 +45,24 @@ function NewIssueComponent(props) {
     const type = document.getElementById("input--type");
     const responsable = document.getElementById("input--responsable");
 
+    var tiempoTranscurrido = Date.now();
+    var hoy = new Date(tiempoTranscurrido);
+
     if (
       description.value.length !== 0 &&
       type.value.length !== 0 &&
       responsable.value.length !== 0
     ) {
-      if (!ids.includes(generateId)) {
-        issues.push({
-          description: description.value,
-          severity: severity.value,
-          type: type.value,
-          responsable: responsable.value,
-          id: generateId,
-        });
+      issues.push({
+        description: description.value,
+        severity: severity.value,
+        type: type.value,
+        responsable: responsable.value,
+        id: generateId,
+        date: hoy.toDateString(),
+      });
 
-        ids.push(generateId);
-      }
+      ids.push(generateId);
     } else {
       alert("Fill in all the empty spaces");
     }
@@ -95,22 +111,25 @@ function NewIssueComponent(props) {
           <input id="input--responsable" type="text" placeholder="John Boe" />
         </div>
 
-        <button id="submit-button" type="button" onClick={addIssue}>
+        <button id="submit-button" type="submit" onClick={addIssue}>
           Add
         </button>
       </form>
       <div id="showList-button-container">
-        <button
-          id="showList-button"
-          type="button"
-          onClick={props.SetShowList(!props.showList)}
-        >
+        <button id="showList-button" type="button" onClick={onShowList}>
           <div id="t-button-container">
-            <p id="t-button">Show List</p>
+            {props.showList === true ? (
+              <p className="show" id="t-button">
+                {showMessage}
+              </p>
+            ) : (
+              <p className="close" id="tc-button">
+                {showMessage}
+              </p>
+            )}
           </div>
         </button>
       </div>
-      <script src="./logic.js"></script>
     </div>
   );
 }
